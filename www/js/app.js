@@ -4,8 +4,8 @@
 // グラフのしたに備考欄リスト表示
 //
 // [NCMB] APIキー設定
-var appKey    = "0e4ba987a396f2f76fcbf2e9ae4ae943e6100140954dceea1d963c06d49d9cc6";
-var clientKey = "3509a11bc9295ae1ce14e49f0e0efdda0089e295f7ea75cd792b28c625c7771c";
+var appKey    = "SetyourAppkey"; // appKeyは予め取得すること
+var clientKey = "SetyourClientKey"; // ClientKeyは予め取得すること
 
 // [NCMB] SDKの初期化
 var ncmb = new NCMB(appKey, clientKey);
