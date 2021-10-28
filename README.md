@@ -1,6 +1,7 @@
-# MonacaUserDemoApp
+# PetScale Monaca Demo
 
-* ID/PW 認証、メールアドレス/PW 認証、匿名認証の３種類を試すことができる、ニフティクラウド mobile backend のサンプルアプリです。
+* ID/PW 認証、メールアドレス/PW 認証、匿名認証の３種類を試すことができる、ニフティクラウド mobile backend のサンプルアプリを改変したPetScaleアプリです。
+* 動作確認の手順はサンプルアプリに準じます。
 
 ## 動作確認までの手順
 1. ニフティクラウド mobile backend（以下 mBaaS）の[会員登録](http://mb.cloud.nifty.com/signup.htm)（無料）
