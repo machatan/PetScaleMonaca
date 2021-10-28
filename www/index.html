@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <script src="components/loader.js"></script>
+      <link rel="stylesheet" href="components/loader.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="js/ncmb-latest.min.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/cssua.min.js"></script>
+      <!-- ピンチできる用に設定 -->
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=2, user-scalable=yes">
+
+    <body>
+          
+        <!-- 【メールアドレス / PW 認証】ログインページ -->
+        <div class="ua-page" data-role="page" id="emailLoginPage">
+            <header data-role="header" data-position="fixed" data-theme="c">
+                <BR><img src="images/budo.png" width=50 height=50 align="left" />にゃんこ体重計会員<BR>ログイン
+            </header>
+            <section data-role="content">
+                <h1>ログインページ</h1>
+                メールアドレス
+                <input type="text" id="login_mailAddress">
+                パスワード
+                <input type="password" id="emailLogin_password">
+                <a href="#" id="emailLoginBtn" data-role="button" data-inline="false" data-theme="a">ログインする</a>
+                <BR><BR><center>新規登録は登録ボタンを押して下さい
+                <a href="#emailRegisterPage" data-role="button" data-mini="true" data-inline="true" data-theme="a">新規会員登録</a>
+                <a href="#PWResetPage" data-role="button" data-mini="true" data-inline="true" data-theme="d">パスワードリセット</a>
+                </center>
+            </section>
+        </div>
+    
+        <!-- 【メールアドレス / PW 認証】新規登録ページ -->
+        <div class="ua-page" data-role="page" id="emailRegisterPage">
+            <header data-role="header" data-position="fixed" data-theme="c">
+                <BR><img src="images/budo.png" width=50 height=50 align="left" />にゃんこ体重計会員<BR>新規登録
+            </header>
+            <section data-role="content">
+                <h1>メールアドレス / PW 新規登録</h1>
+                メールアドレス
+                <input type="text" id="reg_mailAddress">
+                <a href="#yesNoDialog_mailAddress" data-rel="popup" data-position-to="window" data-role="button" data-inline="false" data-theme="a">登録する</a>
+                
+                <a href="#emailLoginPage" data-role="button" data-mini="true" data-inline="true" data-theme="a">戻る</a>
+            </section>
+            <!--Dialog box confirming mailAddress-->
+            <div data-role="popup" id="yesNoDialog_mailAddress" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
+                    <h1>送信確認</h1>
+                </div>
+                <div align="middle" data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title"></h3>
+                    <p>会員登録用のメールを送信します。<br>よろしいですか？</p>
+                    <a href="#" id="YesBtn_mailAddress" data-role="button" data-inline="true" data-transition="flow" data-theme="a">はい</a>
+                    <a href="#" id="NoBtn_mailAddress" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="a">いいえ</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PWリセットページ -->
+        <div class="ua-page" data-role="page" id="PWResetPage">
+            <header data-role="header" data-position="fixed" data-theme="c">
+                <BR><img src="images/budo.png" width=50 height=50 align="left" />にゃんこ体重計会員<BR>パスワードリセット
+            </header>
+            <section data-role="content">
+                <h1>会員パスワードをリセットします</h1>
+                登録時のメールアドレスを入力
+                <input type="text" id="reg_mailAddress">
+                <a href="#yesNoDialog_PWReset" data-rel="popup" data-position-to="window" data-role="button" data-inline="false" data-theme="a">リセットする</a>
+                
+                <a href="#emailLoginPage" data-role="button" data-mini="true" data-inline="true" data-theme="a">戻る</a>
+            </section>
+            <!--Dialog box confirming mailAddress-->
+            <div data-role="popup" id="yesNoDialog_PWReset" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
+                    <h1>送信確認</h1>
+                </div>
+                <div align="middle" data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title"></h3>
+                    <p>パスワードリセット用のメールを送信します。<br>よろしいですか？</p>
+                    <a href="#" id="YesBtn_PWReset" data-role="button" data-inline="true" data-transition="flow" data-theme="a">はい</a>
+                    <a href="#" id="NoBtn_mailAddress" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="a">いいえ</a>
+                </div>
+            </div>
+        </div>    
+    
+        <!-- 詳細ページ -->
+        <div class="ua-page" data-role="page" id="DetailPage">
+            <header data-role="header" data-position="fixed" data-theme="c">
+                <BR><img src="images/budo.png" width=50 height=50 align="left" />にゃんこ体重計会員<BR>ステータス表示
+                <BR><a href="#yesNoDialog_logout" class="ui-btn-right" style="top:20px" data-rel="popup" data-position-to="window" data-role="button" data-inline="false" data-theme="d">ログアウト</a>
+            </header>
+            <section data-role="content">
+                <!--Detail show-->
+                <p><center>アカウント情報</center></p>
+                <!--CurrentUserList-->
+                <center>
+                    <table data-role="listview" id="currentUserData" data-theme="xyz" style="width: 100%;"></table>
+                </center>
+                <BR>
+                <a href="#" id="DisplayGraphBtn" data-role="button" data-inline="false" data-theme="a">グラフ表示</a>
+                <BR><a href="#yesNoDialog_Change" data-rel="popup" data-position-to="window" data-role="button" data-inline="false" data-theme="d">会員情報変更</a>
+                <!--Dialog box confirming logout-->
+                <div data-role="popup" id="yesNoDialog_logout" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
+                        <h1>確認</h1>
+                    </div>
+                    <div align="middle" data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title"></h3>
+                        <p>ログアウトしてもよろしいですか？</p>
+                        <a href="#" id="YesBtn_logout" data-role="button" data-inline="true" data-transition="flow" data-theme="a">はい</a>
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="a">いいえ</a>
+                    </div>
+                </div>
+                <!--Dialog box confirming Change-->
+                <div data-role="popup" id="yesNoDialog_Change" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
+                        <h1>確認</h1>
+                    </div>
+                    <div align="middle" data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title"></h3>
+                        <p>会員情報を変更します。<br>よろしいですか？</p>
+                        <a href="#" id="yesBtn_Change" data-role="button" data-inline="true" data-transition="flow" data-theme="a">はい</a>
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="a">いいえ</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Graphページ -->
+        <div class="ua-page" data-role="page" id="GraphPage">
+            <header data-role="header" data-position="fixed" data-theme="c">
+                <BR><img src="images/budo.png" width=50 height=50 align="left" />にゃんこ体重計<BR>グラフ表示
+            </header>
+            <section data-role="content">
+                <!--Detail show-->
+                <p><center>過去30回計測のグラフです</center></p>
+                <!--CurrentUserList-->
+                <center>                
+                    <canvas id="lineChart" height="300" width="480"></canvas>
+                </center>
+                <a href="#" id="backDetailPage" data-role="button" data-inline="false" data-theme="a">戻る</a>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+/* set padding for iOS7 status bar */
+.ua-ios-7 .ui-page, .ua-ios-8, .ui-page {
+    padding-top: 63px !important;
+}
+
+.ua-ios-7 .ui-header, .ua-ios-8 .ui-header {
+    top: 20px;
+}
+
+.ua-page {
+ background-size: 100% 100%;
+ background-image: url("../images/background.jpg");
+}
+
+table {
+  border: 1px solid #aaa;
+  border-collapse: separate;
+  width: 95%;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+table thead th,
+table tbody th,
+table tbody td {
+  padding: .6em .6em;
+  border-bottom: 1px solid #fff;
+}
+table thead th {
+  background-color: #f63;
+}
+table tbody th {
+  background-color: #f95;
+}
+table thead th + th,
+table tbody td {
+  border-left: 1px solid #f95;
+}
+table tbody tr:last-child th,
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}
